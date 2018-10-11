@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  names: MyString
+  surnames: MyString
+  salary: 9.99
+  birthday: 2018-10-11
+  float: false
+
+two:
+  names: MyString
+  surnames: MyString
+  salary: 9.99
+  birthday: 2018-10-11
+  float: false
