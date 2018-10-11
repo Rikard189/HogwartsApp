@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_11_162712) do
+ActiveRecord::Schema.define(version: 2018_10_11_194432) do
 
   create_table "colleges", force: :cascade do |t|
     t.string "name"
@@ -49,6 +49,24 @@ ActiveRecord::Schema.define(version: 2018_10_11_162712) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["college_id"], name: "index_departments_on_college_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "name"
+    t.string "key_code"
+    t.string "string"
+    t.string "description"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_sections_on_course_id"
+  end
+
+  create_table "sections_students", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "section_id"
+    t.index ["section_id"], name: "index_sections_students_on_section_id"
+    t.index ["student_id"], name: "index_sections_students_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
