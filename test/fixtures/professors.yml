@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  names: MyString
+  surnames: MyString
+  salary: 9.99
+  academic_degree: MyString
+  buena_onda: false
+  is_chavorruco: false
+
+two:
+  names: MyString
+  surnames: MyString
+  salary: 9.99
+  academic_degree: MyString
+  buena_onda: false
+  is_chavorruco: false
