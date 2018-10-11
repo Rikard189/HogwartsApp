@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_11_155343) do
+ActiveRecord::Schema.define(version: 2018_10_11_162712) do
 
   create_table "colleges", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2018_10_11_155343) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["university_id"], name: "index_colleges_on_university_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.integer "key_code"
+    t.integer "difficulty"
+    t.integer "department_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["department_id"], name: "index_courses_on_department_id"
   end
 
   create_table "deans", force: :cascade do |t|
@@ -30,6 +40,26 @@ ActiveRecord::Schema.define(version: 2018_10_11_155343) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["college_id"], name: "index_deans_on_college_id"
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "college_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["college_id"], name: "index_departments_on_college_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "names"
+    t.string "surnames"
+    t.string "enrollment"
+    t.string "house"
+    t.integer "department_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["department_id"], name: "index_students_on_department_id"
   end
 
   create_table "universities", force: :cascade do |t|
