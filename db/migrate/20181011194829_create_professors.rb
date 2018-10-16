@@ -8,7 +8,6 @@ class CreateProfessors < ActiveRecord::Migration[5.2]
       t.boolean :buena_onda
       t.boolean :is_chavorruco
       t.references :department, foreign_key: true
-      t.references :chair, index: true, foreign_key: { to_table: :departments }
       t.timestamps
     end
   end

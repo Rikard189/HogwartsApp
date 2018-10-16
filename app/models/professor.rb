@@ -1,7 +1,7 @@
 class Professor < ApplicationRecord
   has_many :sections
   has_one :department
-  belongs_to :department, optional: true
+  belongs_to :department
   validates :salary, numericality: { less_than: 1 }
   validate :is_chavorruco_and_buena_onda
 
