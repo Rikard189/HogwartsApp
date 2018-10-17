@@ -45,10 +45,12 @@ ActiveRecord::Schema.define(version: 2018_10_11_194829) do
   create_table "departments", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.integer "professor_id"
     t.integer "college_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["college_id"], name: "index_departments_on_college_id"
+    t.index ["professor_id"], name: "index_departments_on_professor_id"
   end
 
   create_table "professors", force: :cascade do |t|
@@ -59,10 +61,8 @@ ActiveRecord::Schema.define(version: 2018_10_11_194829) do
     t.boolean "buena_onda"
     t.boolean "is_chavorruco"
     t.integer "department_id"
-    t.integer "chair_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chair_id"], name: "index_professors_on_chair_id"
     t.index ["department_id"], name: "index_professors_on_department_id"
   end
 
