@@ -1,2 +1,10 @@
-<h1>Professors#index</h1>
-<p>Find me in app/views/professors/index.html.erb</p>
+<h1>Profesores</h1>
+<% @professors.each do |professor| %>
+  <%= link_to "#{professor.names} #{professor.surnames}", professor_path(professor) %>
+  <li>Salario: <%= professor.salary %></li>
+  <li>Academic Degree: <%= professor.academic_degree %></li>
+  <li>Buena Onda: <%= (professor.buena_onda ? "Si" : "No") %></li>
+  <li>Chavorruco: <%= (professor.is_chavorruco ? "Si" : "No") %></li>
+<% end %>
+
+<%= link_to "Nuevo Profesor", new_professor_path %>

@@ -2,7 +2,7 @@ class Professor < ApplicationRecord
   has_many :sections
   has_one :chaired, class_name: "Department"
   belongs_to :department
-  validates :salary, numericality: { less_than: 1 }
+  validates :salary, presence: true, numericality: { greater_than: 0, less_than: 1 }  
   validate :is_chavorruco_and_buena_onda
 
   def is_chavorruco_and_buena_onda

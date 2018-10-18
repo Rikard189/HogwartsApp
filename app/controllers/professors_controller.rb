@@ -19,6 +19,7 @@ class ProfessorsController < ApplicationController
     if @professor.save
       redirect_to @professor
     else
+      puts @professor.errors.full_messages
       render 'new'
     end
   end

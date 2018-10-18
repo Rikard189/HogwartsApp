@@ -1,0 +1,16 @@
+<%= form_for @professor do |f| %>
+  <%= f.label :names, "Nombres" %><br>
+  <%= f.text_field :names %><br><br>
+  <%= f.label :surnames, "Apellidos" %><br>
+  <%= f.text_field :surnames %><br><br>
+  <%= f.label :salary, "Salario" %><br>
+  <%= f.number_field :salary, step: :any %><br><br>
+  <%= f.label :academic_degree, "Academic Degree" %><br>
+  <%= f.text_field :academic_degree %><br><br>
+  <%= f.label :buena_onda, "Es buena onda?" %><br>
+  <%= f.check_box :buena_onda %><br><br>
+  <%= f.label :is_chavorruco, "Es chavorruco?" %><br>
+  <%= f.check_box :is_chavorruco %><br><br>
+  <%= f.hidden_field :department_id, value: 1 %>
+  <%= f.submit submit_message %>
+<% end %>

@@ -1,2 +1,22 @@
-<h1>Professors#show</h1>
-<p>Find me in app/views/professors/show.html.erb</p>
+<h1>Profesor</h1>
+<h2>Nombres: </h2>
+<p><%= @professor.names %></p>
+
+<h2>Apellidos: </h2>
+<p><%= @professor.surnames %></p>
+
+<h2>Salario: </h2>
+<p><%= @professor.salary %></p>
+
+<h2>Academic Degree: </h2>
+<p><%= @professor.academic_degree %></p>
+
+<h2>Buena onda: </h2>
+<p><%= (@professor.buena_onda ? "Si" : "No")%></p>
+
+<h2>Chavorruco: </h2>
+<p><%= (@professor.is_chavorruco ? "Si" : "No")%></p>
+
+<%= link_to "Regresar", professors_path %>
+<%= link_to "Editar", edit_professor_path(@professor) %>
+<%= link_to "Eliminiar", professor_path(@professor), method: :delete %>
