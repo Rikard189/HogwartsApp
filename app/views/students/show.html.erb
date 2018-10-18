@@ -1,2 +1,15 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<h1>Estudiante</h1>
+<h2>Nombres: </h2>
+<p><%= @student.names %></p>
+
+<h2>Apellidos: </h2>
+<p><%= @student.surnames %></p>
+
+<h2>Matricula: </h2>
+<p><%= @student.enrollment %></p>
+
+<h2>Casa: </h2>
+<p><%= @student.house %></p>
+
+<%= link_to "Regresar", students_path %>
+<%= link_to "Editar", edit_student_path(@student) %>

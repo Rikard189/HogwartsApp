@@ -1,0 +1,12 @@
+<%= form_for @student do |f| %>
+  <%= f.label :names, "Nombres" %><br>
+  <%= f.text_field :names %><br><br>
+  <%= f.label :surnames, "Apellidos" %><br>
+  <%= f.text_field :surnames %><br><br>
+  <%= f.label :enrollment, "Matricula" %><br>
+  <%= f.text_field :enrollment %><br><br>
+  <%= f.label :house, "Casa" %><br>
+  <%= f.text_field :house %><br><br>
+  <%= f.hidden_field :department_id, value: 1 %>
+  <%= f.submit submit_message %>
+<% end %>
